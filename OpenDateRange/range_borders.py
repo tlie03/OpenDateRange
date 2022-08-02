@@ -40,11 +40,11 @@ class Date(RangeBroder):
     Class that implements a range border with a concrete date.
     """
     def __init__(self, date: str, date_format: str):
-        self._date = datetime.strptime(date, date_format)
+        self.date = datetime.strptime(date, date_format)
 
     def __lt__(self, other: RangeBroder):
         if isinstance(other, Date):
-            return self._date < other._date
+            return self.date < other.date
         elif isinstance(other, FromInfinity):
             return False
         elif isinstance(other, ToInfinity):
@@ -52,14 +52,14 @@ class Date(RangeBroder):
 
     def __gt__(self, other: RangeBroder):
         if isinstance(other, Date):
-            return self._date > other._date
+            return self.date > other.date
         if isinstance(other, FromInfinity):
             return True
         if isinstance(other, ToInfinity):
             return False
 
     def __eq__(self, other: RangeBroder):
-        if isinstance(other, Date) and self._date == other._date:
+        if isinstance(other, Date) and self.date == other.date:
             return True
         else:
             return False
@@ -71,7 +71,7 @@ class Date(RangeBroder):
         return self > other or self == other
 
     def to_string(self, date_format: str):
-        return self._date.strftime(date_format)
+        return self.date.strftime(date_format)
 
 
 class ToInfinity(RangeBroder):
