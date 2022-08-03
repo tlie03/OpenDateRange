@@ -3,6 +3,14 @@ from datetime import timedelta
 
 
 class DateRange:
+    """
+    This class implements date ranges that support open borders,
+    so it is possible to create date ranges that contain all dates up to
+    a specific date or all dates from a specific date on. Strict ranges with
+    specific dates as borders are supported as well.
+    The implementation does not support any kind of daytime measurement.
+    """
+
     # DateRange supports all formats that are supported by the datetime module
     # '%Y-%m-%d' is the predefined format
     DATE_FORMAT: str = '%Y-%m-%d'
@@ -80,7 +88,7 @@ class DateRange:
         # this method must be reimplemented---!!!
         if self._length is None:
             counter = 0
-            # __iter__ can safely be used because __len__ requires finite date range as well
+            # __iter__ can safely be used because __len__ requires a finite date range as well
             for _ in self.__iter__():
                 counter += 1
             self._length = counter
