@@ -1,2 +1,2 @@
 # OpenDateRange
-Python package that supports date ranges with open borders
+Python package that provides date ranges which support open borders.
