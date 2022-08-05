@@ -41,8 +41,7 @@ class DateRange:
         if not self._is_infinite:
             if date_to < date_from:
                 raise ValueError(f"date_to must be equal or greater than date_form. "
-                                 f"date_from: {date_from.to_string(DateRange.DATE_FORMAT)}"
-                                 f"date_to: {date_to.to_string(DateRange.DATE_FORMAT)}")
+                                 f"{self.__repr__()}")
 
 
     def __repr__(self):
@@ -56,7 +55,7 @@ class DateRange:
 
 
     def intersects(self, date_from: str or None, date_to: str or None) -> bool:
-        # returns true if one date is contained in both ranges
+        # returns true if at least one date is contained in both ranges
         date_range = DateRange(date_from=date_from, date_to=date_to)
         return not (self._date_to < date_range._date_from or date_range._date_to < self._date_from)
 
