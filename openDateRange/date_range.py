@@ -68,14 +68,18 @@ class DateRange:
     # the following methods raise exceptions if called on infinite DateRanges
     def __iter__(self):
         if self._is_infinite:
-            raise StopIteration(f"infinite date ranges are not iterable. date_range: {self.__repr__()}")
+            raise ValueError(f"infinite date ranges are not iterable. date_range: {self.__repr__()}")
         else:
-            delta = timedelta(1)
-            start = self._date_from.date
-            while start <= self._date_to.date:
-                yield start.strftime(DateRange.DATE_FORMAT)
-                start += delta
+            self._current = self._date_from.date
+        return self
 
+    def __next__(self):
+        if self._current > self._date_to.date:
+            raise StopIteration
+        else:
+            ret = self._current.strftime(DateRange.DATE_FORMAT)
+            self._current += timedelta(1)
+            return ret
 
     def __len__(self):
         if self._is_infinite:
