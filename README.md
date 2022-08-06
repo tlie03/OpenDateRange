@@ -31,17 +31,13 @@ all dates that are involved in interactions with instances of the DateRange
 class must match the new date format. Furthermore, all dates that are returned
 by any methods of the DateRange class match the new format as well.
 #### Example
+```python
+from openDateRange import DateRange
+
+# change date format from %Y-%m-%d to %Y/%m/%d
+DateRange.DATE_FORMAT = "%Y/%m/%d"
 ```
-print(DateRange.DATE_FORMAT)
->>> %Y-%m-%d
-```
-Accepts and outputs only dates of the "%Y-%m-%d" format.
-```
-DateRange.DATE_FORMAT = "%Y.%m.%d"
-print(DateRange.DATE_FORMAT)
->>> %Y.%m.%d
-```
-Now accepts and outputs only dates of the "%Y.%m.%d" format.
+All DateRange instances now only accept and output dates in %Y/%m/%d format.
 
 ### Creating date ranges
 ### Representation of date ranges
