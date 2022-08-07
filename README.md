@@ -15,7 +15,6 @@ The following sections describe how to use this class and how to
 interact with its instances.
 * [Date formats](#date-formats)
 * [Creating date ranges](#creating-date-ranges)
-* [Representation of date ranges](#Representation-of-date-ranges)
 * [Contains operator](#contains-operator)
 * [Intersection between date ranges](#intersection-between-date-ranges)
 * [Infinite date ranges](#infinite-date-ranges)
@@ -40,11 +39,31 @@ DateRange.DATE_FORMAT = "%Y/%m/%d"
 All DateRange instances now only accept and output dates in %Y/%m/%d format.
 
 ### Creating date ranges
-### Representation of date ranges
+A DateRange instance takes two parameters. A date from where the range
+should start and a date up to which the range should go. If one of 
+these parameters is set to None the corresponding border will be
+an open border. Both, the start and the end date are included in the date range.
+#### Example
+```python
+from openDateRange import DateRange
+
+# holds all dates from 2000-12-12 up to 2001-12-12
+dr1 = DateRange(date_from="2000-12-12", date_to="2001-12-12")
+# holds all dates from 2000-12-12 on
+dr2 = DateRange(date_from="2000-12-12", date_to=None)
+# holds all dates up to 2001-12-12
+dr3 = DateRange(date_from=None, date_to="2001-12-12")
+# holds all dates
+dr4 = DateRange(date_from=None, date_to=None)
+```
 ### Contains operator
+
 ### Intersection between date ranges
+
 ### Infinite date ranges
+
 ### Date range iterator
+
 ### Date range length
 
 
