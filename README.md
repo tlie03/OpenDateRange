@@ -21,7 +21,7 @@ interact with its instances.
 * [Date range length](#date-range-length)
 
 ### Date formats
-The package supports all datetime formats that are supported by the 
+The package supports all date formats that are supported by the 
 build in datetime package. The date format can be changed via 
 the static attribute DATE_FORMAT that belongs to the DateRange class and
 is predefined as "%Y-%m-%d". When the date format is changed 
@@ -48,17 +48,20 @@ from openDateRange import DateRange
 
 # holds all dates from 2000-12-12 up to 2001-12-12
 dr1 = DateRange(date_from="2000-12-12", date_to="2001-12-12")
+
 # holds all dates from 2000-12-12 on
 dr2 = DateRange(date_from="2000-12-12", date_to=None)
+
 # holds all dates up to 2001-12-12
 dr3 = DateRange(date_from=None, date_to="2001-12-12")
+
 # holds all dates
 dr4 = DateRange(date_from=None, date_to=None)
 ```
 
 ### Contains operator
-To proof if a date is contained in a date range it is possible to use the in
-operator.
+Pythons `in` operator can be used to proof whether a date is contained in
+a date range.
 #### Example
 ```python
 from openDateRange import DateRange
@@ -73,8 +76,8 @@ print("1990-12-12" in dr)
 ```
 
 ### Intersection between date ranges
-The intersect method of the DateRange class takes in
-two date range borders and proofs if the two date
+The `intersects` method of the DateRange class takes in
+two borders that span a date range and proofs if the two date
 ranges intersect. The method returns true if at least 
 one date is contained in both date ranges.
 #### Example 
@@ -93,8 +96,8 @@ Date ranges that have at least one open border are called to be infinite.
 The following functions can not be called on infinite date ranges. These
 include the iterator functionality and the len() function. Due to the fact
 that an iterator on an infinite date range would be an endless loop and
-the length of an infinite date range is not defined. The is_infinite() 
-method of the DateRange class proofs if a DateRange instance is infinite.
+the length of an infinite date range is not defined. The `is_infinite()` 
+method of the DateRange class proofs whether a DateRange instance is infinite.
 
 ### Date range iterator
 If a date range is finite it is possible to iterate over the date range
@@ -112,10 +115,10 @@ print([date for date in dr])
 
 ### Date range length
 A finite date range also has a length which is just the number of dates
-it contains. The length can be determined by the build in len() function.
+it contains. The length can be determined with the build in len() function.
 Note that the length of a date range can not change so the length of 
-a date range is calculated in the first call of the len() and is just read
-from memory in the following calls. Due to this implementation the first call 
+a date range is calculated in the first call of the len() function and 
+is just read from memory in the following calls. Due to this implementation the first call 
 of the len() function may be a little slower especially for very 
 long date ranges.
 
