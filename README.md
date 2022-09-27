@@ -8,6 +8,9 @@ with concrete dates as borders are supported as well.
 The package was developed with python 2.7.18 and only uses the build in 
 python packages abc and datetime.
 
+## Installation
+``$ pip install OpenDateRange``
+
 ## Description of the provided Interface
 This package provides only one class which is the DateRange class.
 The following sections describe how to use this class and how to 
