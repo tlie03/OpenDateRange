@@ -1,5 +1,5 @@
 import unittest
-from OpenDateRange import DateRange
+from src.openDateRange import DateRange
 from helper import valid_dates_sorted
 
 

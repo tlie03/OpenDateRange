@@ -31,7 +31,7 @@ by any methods of the DateRange class match the new format as well.
 #### Example
 
 ```python
-from OpenDateRange import DateRange
+from src.openDateRange import DateRange
 
 # change date format from %Y-%m-%d to %Y/%m/%d
 DateRange.DATE_FORMAT = "%Y/%m/%d"
@@ -46,7 +46,7 @@ an open border. Both, the start and the end date are included in the date range.
 #### Example
 
 ```python
-from OpenDateRange import DateRange
+from src.openDateRange import DateRange
 
 # holds all dates from 2000-12-12 up to 2001-12-12
 dr1 = DateRange(date_from="2000-12-12", date_to="2001-12-12")
@@ -67,7 +67,7 @@ a date range.
 #### Example
 
 ```python
-from OpenDateRange import DateRange
+from src.openDateRange import DateRange
 
 dr = DateRange(date_from="2000-12-12", date_to=None)
 # true
@@ -86,7 +86,7 @@ one date is contained in both date ranges.
 #### Example
 
 ```python
-from OpenDateRange import DateRange
+from src.openDateRange import DateRange
 
 dr = DateRange(date_from="2000-12-12", date_to="2001-12-12")
 # true
@@ -110,7 +110,7 @@ each date as a String of the format that is currently set.
 #### Example
 
 ```python
-from OpenDateRange import DateRange
+from src.openDateRange import DateRange
 
 dr = DateRange(date_from="2000-12-12", date_to="2000-12-15")
 
