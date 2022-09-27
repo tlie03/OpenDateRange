@@ -11,7 +11,7 @@ readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=2.7.18"
 classifiers = [
-    "date", "time", "time range", "range", "date range"
+    "date", "time", "time range", "range", "date range", "date time"
 ]
 
 [project.urls]
