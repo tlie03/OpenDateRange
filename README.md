@@ -1,5 +1,5 @@
 # OpenDateRange
-This is a Python package that provides date ranges which allow open borders.
+This is a Python package that provides date ranges which allows open borders.
 Thereby it is possible to create date ranges that contain all dates 
 up to a certain date or all dates from a certain date on. Of course date ranges 
 with concrete dates as borders are supported as well.
