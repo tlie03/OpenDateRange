@@ -29,8 +29,9 @@ all dates that are involved in interactions with instances of the DateRange
 class must match the new date format. Furthermore, all dates that are returned
 by any methods of the DateRange class match the new format as well.
 #### Example
+
 ```python
-from openDateRange import DateRange
+from OpenDateRange import DateRange
 
 # change date format from %Y-%m-%d to %Y/%m/%d
 DateRange.DATE_FORMAT = "%Y/%m/%d"
@@ -43,8 +44,9 @@ should start and a date up to which the range should go. If one of
 these parameters is set to None the corresponding border will be
 an open border. Both, the start and the end date are included in the date range.
 #### Example
+
 ```python
-from openDateRange import DateRange
+from OpenDateRange import DateRange
 
 # holds all dates from 2000-12-12 up to 2001-12-12
 dr1 = DateRange(date_from="2000-12-12", date_to="2001-12-12")
@@ -63,8 +65,9 @@ dr4 = DateRange(date_from=None, date_to=None)
 Pythons `in` operator can be used to proof whether a date is contained in
 a date range.
 #### Example
+
 ```python
-from openDateRange import DateRange
+from OpenDateRange import DateRange
 
 dr = DateRange(date_from="2000-12-12", date_to=None)
 # true
@@ -80,9 +83,10 @@ The `intersects` method of the DateRange class takes in
 two borders that span a date range and proofs if the two date
 ranges intersect. The method returns true if at least 
 one date is contained in both date ranges.
-#### Example 
+#### Example
+
 ```python
-from openDateRange import DateRange
+from OpenDateRange import DateRange
 
 dr = DateRange(date_from="2000-12-12", date_to="2001-12-12")
 # true
@@ -104,9 +108,10 @@ If a date range is finite it is possible to iterate over the date range
 using the build in iterator functionalities. The iterator returns
 each date as a String of the format that is currently set.
 #### Example
+
 ```python
-from openDateRange import DateRange
- 
+from OpenDateRange import DateRange
+
 dr = DateRange(date_from="2000-12-12", date_to="2000-12-15")
 
 print([date for date in dr])
